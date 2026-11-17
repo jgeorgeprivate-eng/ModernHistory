@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modern History</title>
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0f1a33">
+<meta name="apple-mobile-web-app-title" content="Modern History">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Limelight&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <div class="top-row">
+      <div class="brand">Modern History<small>Units 1 and 2 · Pippa's party</small></div>
+      <div class="coins" id="coins" aria-live="polite"><i></i><span id="coinN">0</span></div>
+    </div>
+    <nav class="tabs" aria-label="Sections">
+      <button type="button" data-go="party">Party</button>
+      <button type="button" data-go="lessons">Lessons</button>
+      <button type="button" data-go="evidence">Evidence</button>
+      <button type="button" data-go="command-terms">Terms</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="view" id="v-party" aria-label="Party">
+  <div class="scene-wrap">
+    <div id="scene"></div>
+    <div class="party-status"><span>Guests <b id="guestN">0</b> of 12</span><span>Bought <b id="ownN">0</b> of 16</span></div>
+    <div class="sum"><span>Lessons finished <b id="doneN">0</b> of <b id="allN">0</b></span><span id="nextGuest"></span></div>
+  </div>
+  <h2 class="sec">Party shop</h2>
+  <p class="lead">Coins come from lesson work. A correct quiz answer earns 5 coins the first time. Marking a written answer earns 10. Guests arrive as lessons are finished.</p>
+  <div class="shop" id="shop"></div>
+  <details class="proto">
+    <summary>Testing controls for a parent</summary>
+    <p style="margin:8px 0 0">These let you see the whole party without doing the lessons. Starting again erases all progress on this device.</p>
+    <div class="row">
+      <button type="button" class="btn ghost" id="protoCoins">Add 500 coins</button>
+      <button type="button" class="btn ghost" id="protoReset">Start again</button>
+    </div>
+  </details>
+</section>
+
+<section class="view" id="v-lessons" aria-label="Lessons">
+  <div class="jump" id="jump" aria-label="Go to a block"></div>
+  <div id="lessonList"></div>
+</section>
+
+<section class="view" id="v-lesson" aria-label="Lesson"><div id="lessonBody"></div></section>
+
+<section class="view" id="v-dash" aria-label="Quick-fire round"><div id="dashBody"></div></section>
+
+<section class="view" id="v-evidence" aria-label="Evidence bank">
+  <p class="lead">The dates, figures, names and short quotes worth knowing by heart, block by block. Read the prompt, say the answer, then press the card to check.</p>
+  <div class="jump" id="evJump" aria-label="Choose a block"></div>
+  <div id="evList"></div>
+</section>
+
+<section class="view" id="v-command-terms" aria-label="Command terms">
+  <p class="lead">Each question starts with a command term. The term tells you how much to write and whether you need your own knowledge.</p>
+  <div class="calc">
+    <label for="marks" class="small">Marks for the question: <b id="marksN">5</b></label>
+    <output id="mins" for="marks">9 minutes</output>
+    <input type="range" id="marks" min="2" max="20" step="1" value="5">
+    <div class="small">Allow 1.8 minutes for each mark.</div>
+  </div>
+  <div id="ctList"></div>
+</section>
+</main>
+
+<script>window.MH_LESSONS=[];window.MH_SRC={};</script>
+<script src="js/data-0.js"></script>
+<script src="js/data-1.js"></script>
+<script src="js/data-2.js"></script>
+<script src="js/data-3.js"></script>
+<script src="js/data-4.js"></script>
+<script src="js/data-5.js"></script>
+<script src="js/data-6.js"></script>
+<script src="js/data-7.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
